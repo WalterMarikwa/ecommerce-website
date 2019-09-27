@@ -1,0 +1,60 @@
+#showcase {
+  height: 600px;
+  background-image: url("https://bit.ly/2MicR17");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #ffffff;
+  border: 3px solid white;
+}
+
+.colorx {
+  color: gold;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px black;
+}
+
+@media (max-width: 768px) {
+  .card {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #customers {
+    text-align: center;
+  }
+  #social {
+    text-align: center;
+  }
+}
+
+.name {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  color: gold;
+  text-shadow: 2px 2px 4px black;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+}
+
+.card {
+  height: auto;
+  margin: 20px 0;
+}
+
+.card .photoBg {
+  height:20em;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+}
+
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+} */
