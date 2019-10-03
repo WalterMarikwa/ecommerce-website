@@ -45,7 +45,7 @@ const Card = () => {
                     all of that, you should listen to music daily, rather than
                     occasionally.{" "}
                   </p>
-                  <a href="/Product" className="btn btn-primary">
+                  <a href="http://localhost:3000/products" className="btn btn-primary">
                     Products...
                   </a>
                 </div>

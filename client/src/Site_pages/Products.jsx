@@ -2,17 +2,20 @@ import React from "react";
 import axios from 'axios';
 // import Prod from "./ProductsData.json";
 import "../page_styles/Products.css";
+import DropMenu from "../components/products/FilterProducts";
+import Hero from "../components/products/Hero";
+import DropMenuprice from "../components/products/FilterProductsByPrice"
+
 
 class Products extends React.Component {
   state = {
     Products: [],
     nameFilter: '',
-    priceFilterMin: null,
-    priceFilterMax: null
+    priceFilter: ''
   };
   componentDidMount() {
     axios
-    .get("/api/products/")
+    .get("/api/products")
     .then((response) => {
       console.log(response)
         this.setState({
@@ -20,30 +23,59 @@ class Products extends React.Component {
         })
     })
     .catch(err => {
-      /// display error banner or something?
+      console.log(err);
     });
   }
-  updateNameFilter(name) {
+  updateNameFilter = (name) => {
     this.setState({nameFilter: name})
   }
-  updatePriceFilter(min, max) {
-    this.setState({priceFilterMin: min, priceFilterMax: max})
+  updatePriceFilter = (priceString) => {
+    this.setState({priceFilter: priceString})
   }
 
   render() {
-
     let productsToList = [...this.state.Products]
     // filtering on productsToList
+    let nameFilter = this.state.nameFilter;
+    const priceFilter = this.state.priceFilter;
+
+    if (nameFilter && nameFilter.toLowerCase() !== 'all') {
+      console.log('Filter is on!')
+      nameFilter = nameFilter.toLowerCase()
+      productsToList = productsToList.filter(
+        Products => {
+          const type = Products.product_type.toLowerCase()
+          return type.indexOf(nameFilter) !== -1
+        }
+      );
+    }
+
+    if (priceFilter && priceFilter.toLowerCase() !== 'all') {
+      console.log('hit the price filter');
+      console.log(productsToList);
+      productsToList = productsToList.filter((product) => {
+        const priceFilterArr = priceFilter.split(',');
+        const priceMin = parseInt(priceFilterArr[0]);
+        const priceMax = parseInt(priceFilterArr[1]);
+        
+        console.log(priceMin, "min");
+        console.log(priceMax, "max");
+
+        return product.item_price >= priceMin && product.item_price <= priceMax;
+      }) 
+    }
+    // Work on this!!
+    // if(productsToList.length == 0) {
+
+    // }
+    console.log("test", priceFilter);
 
     return (
       <div>
-        <section id="showcase">
-          <div className="container_main">
-            <h1>Get Your Instruments Here!</h1>
-          </div>
-        </section>
-
-        <br />
+        <Hero />
+        <DropMenu onNameChange={this.updateNameFilter} />
+        <DropMenuprice onPriceChange={this.updatePriceFilter} />
+        
 
         <div className="card">
           <div className="row">

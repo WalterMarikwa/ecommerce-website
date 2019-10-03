@@ -6,7 +6,7 @@ import Home from './Site_pages/Home';
 // import ProductPage from './Site_pages/Products';
 import Contact from './Site_pages/Contact';
 import Nav from './components/utility/Nav';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Products from './Site_pages/Products';
 
 class App extends React.Component {
@@ -24,9 +24,5 @@ class App extends React.Component {
      );
   }
 }
-
-
-
-
  
 export default App;

@@ -5,17 +5,12 @@ body {
     background-color:x #F0F0F0;
 }
 
-@media(max-width: 700px) {
-    .card {
-        margin-bottom: 20px;   
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
     }
-    #customers {
-        text-align: center;
-    }
-    #social {
-        text-align: center;
-    }
-}
+  }
 
 /*HEADER*/
 
@@ -117,9 +112,80 @@ h2 {
 
  /*CONTACT FORM*/
 
- .contact-form {
-     margin: 10%;
-     padding: 20px;
+ textArea {
+     padding: 16px;
+     margin-top: 20px;
  }
 
+ * {
+    box-sizing: border-box;
+  }
+  
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background: #fff;
+    padding: 5px;
+    color: #000;
+    border:2px solid #000;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: gold;
+    color: #F0F0F0;
+  }
+  
+  /* Style the container/contact section */
+  .containerForm {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .commentSection {
+    border:2px solid white;
+    box-shadow: 5px 10px 8px black;
+    border-radius: 25px;
+    margin: 16px;
+    padding: 20px;
+    float: left
+  }
 
+  .commentSection:hover {
+    background-color: gold;
+  }
+
+
+  .commentSection {
+    animation:bouncy 5s infinite linear;
+    position: relative;
+  }
+
+
+  .CommentBox {
+    padding: 20px;
+  }

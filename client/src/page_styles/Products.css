@@ -6,7 +6,7 @@
   background-position: center;
   text-align: center;
   color: #ffffff;
-  border: 3px solid white;
+  margin: 0 3px 0 3px;
 }
 
 .colorx {
@@ -26,6 +26,11 @@
   #social {
     text-align: center;
   }
+  .photoBg {
+    text-align: center;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .name {
@@ -33,6 +38,11 @@
   font-size: 20px;
   color: gold;
   text-shadow: 2px 2px 4px black;
+}
+
+h4 {
+  text-shadow: 2px 2px 4px black;
+  text-align: center;
 }
 
 .price {
@@ -46,7 +56,7 @@
 }
 
 .card .photoBg {
-  height:20em;
+  height: 20em;
   width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -54,7 +64,16 @@
   overflow: hidden;
 }
 
-/* .container {
+.filterProd {
   display: flex;
-  flex-wrap: wrap;
-} */
+  flex-direction: column;
+  margin: 20px;
+}
+
+select {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid black;
+  margin: 0 0.3em 0.3em 0;
+}
